@@ -14,7 +14,7 @@ public class UserController {
 
     @GetMapping("/users")
     public User[] getAllUser(){
-        User[] list = {new User(1, "Test"), new User(2, "Test"), new User(3, "Test")};
+        User[] list = {new User(1, "Test"), new User(2, "Test"), new User(3, "Test"), new User(4, "Test")};
         return list;
 
     }
