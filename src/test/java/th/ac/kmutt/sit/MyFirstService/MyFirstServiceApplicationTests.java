@@ -22,11 +22,11 @@ public class MyFirstServiceApplicationTests {
 	private TestRestTemplate restTemplate;
 
 	@Test
-    public void userId5SelectTest(){
-        assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/user?id=5", User.class).getId())
-                .isEqualTo(5);
-        assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/user?id=5", User.class).getName())
-                .isEqualTo("test5");
+    public void getUserId5ByAttributeTest(){
+        assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/user?id=4", User.class).getId())
+                .isEqualTo(4);
+        assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/user?id=4", User.class).getName())
+                .isEqualTo("test4");
     }
 
     @Test
@@ -50,6 +50,14 @@ public class MyFirstServiceApplicationTests {
                 .isEqualTo("Nathawat");
         assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/user/1", User.class).getId())
                 .isEqualTo(1);
+    }
+
+    @Test
+    public void getUserId2ByUriTest(){
+	    assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/user/2", User.class).getId())
+                .isEqualTo(2);
+        assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/user/2", User.class).getName())
+                .isEqualTo("test2");
     }
 
 }
